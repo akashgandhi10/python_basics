@@ -1,0 +1,103 @@
+Phython
+
+type(variable)=will gave variable type
+
+dir(variable)= ll give fuctions which we can use with that variable
+
+we don't have to give datatype to variables. It ll take automatically by its's contains.
+
+we could overwrite any variables at anytime.
+
+variables(/objects) have direct properties of class.
+
+multiple diclaration
+
+String: Placeholder in string = %s(for string) and %d(for int)  ex.sent="%s gandhi"  fn=akash  sent%fn or sent%("akash")  sent2=hey %s %s  fn=akash  ln=gandhi sent2%(fn.ln) or sent2%("akash","gandhi")
+
+string[0:7] by that we can add or delete or can take any part of string as we want.
+
+diff betw string and list.
+
+List/array[]: follow slicing and Indexing in list/array like same as string
+
+list fuctions: lsit3 = list1+ list2, del list[index],len(list),max(list),min(list), list.append("object"), list.count("object"), list.clear(), del list {will delete whole list}
+
+Dictionary{}: key & value Ex. nameage={"akash":23,"devanshi":19} , call nameage["akash"], dic.clear(), del dic , dictionary is unordered;there isn't any index so every time you print it;you may get diff ordered, it's random. , dic.keys(), dic.values(), dic.update(dic1) {will give you dic with objects of dic +dic1}
+
+Tuples(): tup3 = tup1 + tup2, it's immutable, you can't delete any object or add any object, what you can do is; you could delete whole tuple ex. del tup or you could always overwrite it with new one. Tuples also follow slicing and indexing ex.tup[index] , tup[0:2], len(tup)
+
+if-else statment :spacing is imp in python otherwise it will throw a error msg
+
+boolean operatores : > < == !=  {"=" for assing value , "==" for compare} , so in if statment there is always comparision so ==
+
+nested if-else: again watch spacing
+
+elif= else-if it's just a one or many conditions betw actual if-else statment
+
+logical operatores: and , or
+
+for loop : again spacing, range as for i in range(0,10): or for i in range(0,10,2): {(start,end-1,add diff like +2 here)}
+           in list,tupe i in list:
+
+loop control statement(you have to use if statement for that): bcp break continue pass
+break= it will end any loop depend upon conditions
+pass= it will use as filler, if you have "if else", you dont know what to write in else part, you could just pass it. pass wont effect anything in your code.
+continue: it will exclude any part depend upon conditions and continuw remaining part.
+
+try and except : for error handaling when code gives you an error it will directly go to except and print whatever you write in except part.
+
+commenting : with # (single line comment) or with """comment""" or '''comment''' (multiple line as you want)
+
+concept of \ : 'it\'s nice day' so it want give you error. use for define quotation like it avoid \ one single quote
+otherwise it's use for multiline statement if it's not fit in one line and you want to type in like multiline.
+ex. if akasjsjdajsdjsdjsdjsdjasdajdnajdn \
+==\
+hbsadhbhasbdhabdahbhadas:
+	print("hey") 
+
+
+
+(Creat our own function)Function: three things are important Function name, Parameters(it's be optional) and Body
+def funcName(parameters):
+	body
+call: funcName(hey)
+
+
+Pre-Defined Function:
+abs : give you absolute value (possitive or negative it will give you possitive)
+bool : booliean True or False (if there is a data it ll give u true and if there is 0 or empty than only false)
+dir : give you functions dir(variable)
+help : help(variable.fucntion) = help(stringvar.upper)
+float : string to float Decimal num
+int : float to int whole num (not string to int)
+max : max appy on numbers + string
+min : min numbers + string
+range : in for loop how we used and also ex. print(list(range(0,5))) [0,1,2,3,4] in this you can't use any name. you have to use default name ony like list,string,tuple etc.
+sum : sum
+set : it will gove you unique eliments from list and generte new set
+
+creat any text file save as ".txt"
+now you can open it in your shell ex. textFile=open("textfile.txt")
+you can read as textFile.read()
+now pointer at the end of the file if you again put read command it will give you empty result with '' , read pointer/position ex. pointer=textFile.tell()
+how to put pointer at starting ex. pointer=textFile.seek(0,0)
+now again you can read file with whole contain
+now close it ex. textFile.close()
+textFile=open("textfile.txt","r") -for read only
+	"				"		,"w"  -for write only (it will overwritte exiting one)
+	"				"		,"a"  -for only write(it will append the contains but you cant read it)
+	"				"		,"a+" -now you could read also
+how to create whole text file copy from existing one:(this is cut paste)
+import os
+os.rename("textFile.txt","textFile2.txt")
+os.remove("filename") =to delete it
+how to copy data from one existing file to another newfile(and that also we can created in shell)
+newfile=open("newtext.txt","w")
+newfile.write(textFile.read())
+
+Input Function: ex. string=input("enter your name : ")
+					enter your name : akash
+
+
+
+	

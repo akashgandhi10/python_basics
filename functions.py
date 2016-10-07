@@ -852,136 +852,280 @@ print ing('move')
 print ing('hug')
 print ing("be")
 print ing("stop")
-print ing("play")"""
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+print ing("play")
+
+#Write a program that maps a list of words into a list of integers representing the lengths of the correponding words. Write it in three different ways: 1) using a for-loop, 2) using the higher order function map(), and 3) using list comprehensions.
+
+def lens(l):
+	s = ""
+	l2 = []
+	for i in l:
+		s = i
+		l1 = len(s)
+		l2.append(l1)
+	return l2
+	
+print lens(["akash","gandhi"])
+
+l = ["akash","gandhi"]
+print [len(i) for i in l]
+
+print map(lambda x:len(x),l)
+
+def myFunc(f):
+	f = [1]
+	return f
 		
+g = [0], {0: 1}, (0)
+g = myFunc(g)
+what will be value of g?
+
+#Using the higher order function reduce(), write a function max_in_list() that takes a list of numbers and returns the largest one. Then ask yourself: why define and call a new function, when I can just as well call the reduce() function directly?
+
+print reduce(lambda x,y: x if (x>y) else y,[1,2,3,100,3,2,10])
+
+#Write a function find_longest_word() that takes a list of words and returns the length of the longest one. Use only higher order functions.
+
+print max(map(len,["akash","gandhi","devanshi"]))
+
+#print reduce(lambda x,y : x if x>y else y, ["gandhi","devanshi"])
+
+#print filter(lambda x,y : len(x)>len(y), ["akash","gandhi","devanshi"])
+
+print [max(len(i) for i in ["akash","gandhi","devanshi"])]
+
+
+#Using the higher order function filter(), define a function filter_long_words() that takes a list of words and an integer n and returns the list of words that are longer than n.
+
+print filter(lambda x,n=10: len(x)>n,["aaaaaaaaaaaa","abd","bbbbbbbbbbbbbbbb"])
+
+#Represent a small bilingual lexicon as a Python dictionary in the following fashion {"merry":"god", "christmas":"jul", "and":"och", "happy":gott", "new":"nytt", "year":"r"} and use it to translate your Christmas cards from English into Swedish. Use the higher order function map() to write a function translate() that takes a list of English words and returns a list of Swedish words.
+
+'''def translate(l1):
+
+	l = ["god","jul","och","gott","nytt","ar"]
+
+	for i in range(0,len(l1)):
+		l1[i] = l[i]
+	return l1
+
+print translate(["merry"])
+
+import sys
+def translate(words):
+    lexicon = {"merry": "god", "christmas": "jul", "and": "och", "happy": "gott", "new": "nytt", "year": "ar"}
+    return map(lambda word: lexicon[word], words)
+
+if __name__ == "__main__":
+    print translate(["merry", "christmas"])'''
+
+
+def trans():
+
+	d =  {"merry":"god", "christmas":"jul", "and":"och", "happy":"gott", "new":"nytt", "year":"ar"}
+	return map(lambda x : d[x], ["merry"])
+
+#Write a version of a palindrome recogniser that accepts a file name from the user, reads each line, and prints the line to the screen if it is a palindrome.
+
+'''def palindrome(s):
+
+	
+	for i in range(1,len(s)+1):
+		print s[i-1]
+		print s[-i]
+		if s[i-1] != s[-i]:
+		
+			return "False"
+	return "True"
+
+print palindrome("abbaa")'''
+import os	
+
+'''def palindrome_io(file_, mode):
+    stuff = "`~!@#$%^&*()_-=+[]{}\|;:,<.>/?"
+    with open(file_, mode) as f:
+        for line in f:
+            for char in line:
+                if char in stuff:
+                    line = line.replace(char, "")
+            if line.lower().strip() == line[::-1].lower().strip():
+                print True
+            else:
+                print False
+palindrome_io(r'/home/akashgandhi10/Documents/file.txt', 'r+')
+
+
+def palindrome_io(file_, mode):
+    with open(file_, mode) as f:
+        for line in f:
+            line = line.translate(None, "`~!@#$%^&*()_-=+[]{}\|;:,<.>/?").lower().strip()
+            print str(line == line[::-1])
+
+palindrome_io(r'C:\Users\Brian Gunsel\Desktop\test.txt', 'r+')'''
+
+def palindrome_io(file,mode):
+	f = open(file, 'r+')
+	for l in f.readlines():
+		l = l.translate(None,"!@#$%^&*(){}_+<>?,./;:[]-=").lower().strip()
+		
+		if l == l[::-1]:	
+			print l
+
+palindrome_io('/home/akashgandhi10/Documents/text.txt', 'r+')
+
+#According to Wikipedia, a semordnilap is a word or phrase that spells a different word or phrase backwards. ("Semordnilap" is itself "palindromes" spelled backwards.) Write a semordnilap recogniser that accepts a file name (pointing to a list of words) from the user and finds and prints all pairs of words that are semordnilaps to the screen. For example, if "stressed" and "desserts" is part of the word list, the the output should include the pair "stressed desserts". Note, by the way, that each pair by itself forms a palindrome!
 
 
 
 
+def palindrome_io(file,mode):
+	f = open(file, 'r+')
+	for l in f.readlines():
+		l = l.translate(None,"!@#$%^&*(){}_+<>?,./;:[]-=").lower().strip()
+		
+		if l == l[::-1]:	
+			print l
+
+palindrome_io('/home/akashgandhi10/Documents/text.txt', 'r+')
+
+#Write a procedure char_freq_table() that, when run in a terminal, accepts a file name from the user, builds a frequency listing of the characters contained in the file, and prints a sorted and nicely formatted character frequency table to the screen.
+
+def freq_io(file):
+	f = open(file,"r+")	
+	d = {}
+	for l in f:
+		for char in l:
+			if char not in d:
+				d[char] = 0
+			d[char] += 1
+	print d
+
+if __name__ == "__main__":
+	freq_io("/home/akashgandhi10/Documents/text.txt")
 
 
 
+The International Civil Aviation Organization (ICAO) alphabet assigns code words to the letters of the English alphabet acrophonically (Alfa for A, Bravo for B, etc.) so that critical combinations of letters (and numbers) can be pronounced and understood by those who transmit and receive voice messages by radio or telephone regardless of their native language, especially when the safety of navigation or persons is essential. Here is a Python dictionary covering one version of the ICAO alphabet:
+
+d = {'a':'alfa', 'b':'bravo', 'c':'charlie', 'd':'delta', 'e':'echo', 'f':'foxtrot',
+     'g':'golf', 'h':'hotel', 'i':'india', 'j':'juliett', 'k':'kilo', 'l':'lima',
+     'm':'mike', 'n':'november', 'o':'oscar', 'p':'papa', 'q':'quebec', 'r':'romeo',
+     's':'sierra', 't':'tango', 'u':'uniform', 'v':'victor', 'w':'whiskey', 
+     'x':'x-ray', 'y':'yankee', 'z':'zulu'}
+Your task in this exercise is to write a procedure speak_ICAO() able to translate any text (i.e. any string) into spoken ICAO words. You need to import at least two libraries: os and time. On a mac, you have access to the system TTS (Text-To-Speech) as follows: os.system('say ' + msg), where msg is the string to be spoken. (Under UNIX/Linux and Windows, something similar might exist.) Apart from the text to be spoken, your procedure also needs to accept two additional parameters: a float indicating the length of the pause between each spoken ICAO word, and a float indicating the length of the pause between each word spoken.'''
+
+from gtts import gTTS
+import os
+tts = gTTS(text='Good morning', lang='en')
+tts.save("good.mp3")
+#os.system("mpg321 good.mp3")
 
 
 
+from gtts import gTTS
+from tempfile import TemporaryFile
+tts = gTTS(text='Hello', lang='en')
+f = TemporaryFile()
+tts.write_to_fp(f)
+f.close()
+def ICAO(file):
+	f = open(file,"r+")
+	d = {'a':'alfa', 'b':'bravo', 'c':'charlie', 'd':'delta', 'e':'echo', 'f':'foxtrot',
+     'g':'golf', 'h':'hotel', 'i':'india', 'j':'juliett', 'k':'kilo', 'l':'lima',
+     'm':'mike', 'n':'november', 'o':'oscar', 'p':'papa', 'q':'quebec', 'r':'romeo',
+     's':'sierra', 't':'tango', 'u':'uniform', 'v':'victor', 'w':'whiskey', 
+     'x':'x-ray', 'y':'yankee', 'z':'zulu'}
+	
+	os.system("akash")
+	for l in f.readlines():	
+		l = l.lower().strip()
+		for char in l:
+			if char == ' ':
+				pass
+			else:
+				
+				
+				print (char + " as in " + d[char])
+	
+	
 
+if __name__ == "__main__":
+	ICAO("/home/akashgandhi10/Documents/text.txt")
 
+# 36 35 and map reduce filter
 
+#Write a program that given a text file will create a new text file in which all the lines from the original file are numbered from 1 to n (where n is the number of lines in the file).
 
+def copy(file, file1):
 
+	f = open(file,"r+")
+	f1 = open(file1, "w+")
+	'''print f.read()
+	f.seek(0,0)
+	print f.readline()
+	f.seek(0,0)
+	print f.readlines()
+	f.seek(0,0)'''
+	n =1
+	for l in f.readlines():
+		f1.write(str(n) + ": " + l)
+		n += 1
+	f.close()
+	f1.close()
+	
+	
+if __name__ == "__main__":
+	copy("/home/akashgandhi10/Documents/text.txt", "/home/akashgandhi10/Documents/text1.txt")
 
+#Write a program that will calculate the average word length of a text stored in a file (i.e the sum of all the lengths of the word tokens in the text, divided by the number of word tokens).
 
+def avg(file):
+	f = open(file, "r+")
+	numberOfWords = 0
+	sumOfLengths = 0.0
+	for l in f.readlines():
+		numberOfWords = numberOfWords + len(l.split(" "))
+		l = l.replace(" ","")
+		sumOfLengths += len(l)
+		
+	average = 0
+	
+	average = sumOfLengths/numberOfWords
+	print average
+	f.close()
 
+if __name__ == "__main__":
+	avg("/home/akashgandhi10/Documents/text.txt")"""
 
+#A hapax legomenon (often abbreviated to hapax) is a word which occurs only once in either the written record of a language, the works of an author, or in a single text. Define a function that given the file name of a text will return all its hapaxes. Make sure your program ignores capitalization.
 
+def hapax(file):
 
+	f = open(file, "r+")
+	d = {}
+	for l in f.readlines():
+		
+		l = l.lower().strip().split(" ")
+		
+		for j in l:
+		
+			if j not in d:
+				d[j] = 1
+			else:
+				d[j] = d[j] + 1
+			
 
+	
+	
+		
+	
+	for i in d:
+		if d[i] == 1:
+			print ("hapax is :" + i)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+if __name__ == "__main__":
+	hapax('/home/akashgandhi10/Documents/text.txt')
+		
 
 
 
@@ -1084,37 +1228,54 @@ print ing("play")"""
 
 
 	
-
-
-
-
-
-
-		
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		
-		
-		
+	
 			
-		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

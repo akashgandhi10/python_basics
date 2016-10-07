@@ -99,5 +99,8 @@ Input Function: ex. string=input("enter your name : ")
 					enter your name : akash
 
 
-
+for i, j in enumerate(list,dic...):
+		print i
+		print j	
+	so i will be index of j
 	

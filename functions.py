@@ -1095,7 +1095,7 @@ def avg(file):
 	f.close()
 
 if __name__ == "__main__":
-	avg("/home/akashgandhi10/Documents/text.txt")"""
+	avg("/home/akashgandhi10/Documents/text.txt")
 
 #A hapax legomenon (often abbreviated to hapax) is a word which occurs only once in either the written record of a language, the works of an author, or in a single text. Define a function that given the file name of a text will return all its hapaxes. Make sure your program ignores capitalization.
 
@@ -1125,6 +1125,94 @@ def hapax(file):
 
 if __name__ == "__main__":
 	hapax('/home/akashgandhi10/Documents/text.txt')
+
+#Write a program able to play the "Guess the number"-game, where the number to be guessed is randomly chosen between 1 and 20. (Source: http://inventwithpython.com) This is how it should work when run in a terminal:
+
+'''>>> import guess_number
+Hello! What is your name?
+Torbjorn
+Well, Torbjrn, I am thinking of a number between 1 and 20.
+Take a guess.
+10
+Your guess is too low.
+Take a guess.
+15
+Your guess is too low.
+Take a guess.
+18
+Good job, Torbjrn! You guessed my number in 3 guesses!'''
+
+
+def guess(file):
+	f = open(file, "r+")
+	
+	name = input("Hello! what is your name?\n")
+	print("Well, " + name + ", I am thinking of a number between 1 and 20.")
+	count = 0
+	i = f.readline()
+	j = 1
+
+	
+	while j:
+		count += 1
+		number = input("Take a guess.\n")
+		i = int(i)
+		if i == number:
+			print ("Good job, " + name + "! You guessed my number in " + str(count) + " guesses!'''")
+			break
+		elif i > number:
+			print ("Your guess is too low")
+			
+		
+		elif i < number:
+			print("Your guess is too high")
+		j += 1
+	
+		
+		
+if __name__ == "__main__":
+	guess('/home/akashgandhi10/Documents/text.txt')"""
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		
 
 

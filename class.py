@@ -130,6 +130,13 @@
 # print type(Dog())
 # print Animal.__doc__
 # print Dog.__doc__
+# #issubclass and isinstance
+# print issubclass(Dog, Animal)
+# print issubclass(Animal, Dog)
+# print isinstance(dog, Dog)
+# print isinstance(animal, Dog)
+# print isinstance(animal,Animal)
+# print isinstance(dog, Animal)
 
 #special method string, lenght and delete
 # class Book(object):
@@ -156,3 +163,53 @@
 # print len(b)
 # del b
 # print b
+
+# from __future__ import division
+# class Line(object):
+#     "homework-1 oop"
+#
+#     def __init__(self, coor1, coor2):
+#         self.coordinate1 = coor1
+#         self.coordinate2 = coor2
+#
+#     def distance(self):
+            # x1,y1 = self.coordinate1
+            # x2,y2 = self.coordinate2
+#         print (((self.coordinate1[0] - self.coordinate2[0])**2 + (self.coordinate1[1] - self.coordinate2[1])**2)**(1/2))
+#
+#
+#     def slope(self):
+#         print ((self.coordinate2[1] - self.coordinate1[1]) / (self.coordinate2[0] - self.coordinate1[0]))
+#
+# l = Line((3,2),(8,10))
+# print l.coordinate1
+# print l.coordinate2
+# print l.coordinate1[0]
+# print l.coordinate2[0]
+# print l.coordinate1[1]
+# print l.coordinate2[1]
+# l.distance()
+# l.slope()
+
+
+#homework-2
+# from __future__ import division
+# class Cylinder(object):
+#     "homework-2"
+#     pi = 3.14
+#
+#     def __init__(self, height = 1, radius = 1):
+#         self.height = height
+#         self.radius = radius
+#
+#     def volume(self):
+#         print (Cylinder.pi * (self.radius**2) * self.height)
+#
+#     def surfaceArea(self):
+#         print ((2 * Cylinder.pi * self.radius * self.height) + (2 * Cylinder.pi * (self.radius**2)))
+#
+# c = Cylinder(2, 3)
+# print c.height
+# print c.radius
+# c.volume()
+# c.surfaceArea()

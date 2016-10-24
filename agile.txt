@@ -1,0 +1,11 @@
+Agile methodology
+
+Scrum: (to team member)
+
+-What did you do yesterday?
+-What are you gonna do today?
+-Is there any blocker? like if your work is depend on other. If they complete their work after only you could able to do your part. Or may
+  be you have sent a email to someone and he/she didn't respond, So you couldn't able to do your work. That's call blocker for you. In short
+  you stuck in between.
+-What is your gut check? like you have assigned to do one or more in certain time limit like one or two week that's call sprint. So in
+  that sprint you can able to complete your task or not? what is your gut feeling about it. that's gut check.

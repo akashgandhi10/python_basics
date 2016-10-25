@@ -124,9 +124,40 @@
 # Then, the output should be:
 # bag,hello,without,world
 
-def sorting():
-    w = raw_input("word sequence: ")
-    lw = w.split(",")
-    lw.sort()
-    print ",".join(lw)
-sorting()
+# def sorting():
+#     w = raw_input("word sequence: ")
+#     lw = w.split(",")
+#     lw.sort()
+#     print ",".join(lw)
+# sorting()
+
+# Question 9
+# Level 2
+#
+# Question
+# Write a program that accepts sequence of lines as input and prints the lines after making all characters in the sentence capitalized.
+# Suppose the following input is supplied to the program:
+# Hello world
+# Practice makes perfect
+# Then, the output should be:
+# HELLO WORLD
+# PRACTICE MAKES PERFECT
+
+def upperline():
+    no_of_lines = 5
+    lines1 = ""
+    for i in xrange(5):
+        lines1+=raw_input()+"\n"
+    print lines1.upper()
+
+    lines = []
+    while True:
+        line = raw_input()
+        if line:
+            lines.append(line)
+        else:
+            break
+
+    text = '\n'.join(lines)
+    print text.upper()
+upperline()

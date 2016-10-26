@@ -1,36 +1,36 @@
 # Write a program which will find all such numbers which are divisible by 7 but are not a multiple of 5,
 # between 2000 and 3200 (both included).
 # The numbers obtained should be printed in a comma-separated sequence on a single line.
-
+#
 # l = []
 # for i in range(2000,3201):
 #     if i % 7 == 0 and i % 5 != 0:
 #         l.append(str(i))
 #
 # print ','.join(l)
-
+#
 # Question:
 # With a given integral number n, write a program to generate a dictionary that contains (i, i*i) such that is an integral number between 1 and n (both included). and then the program should print the dictionary.
 # Suppose the following input is supplied to the program:
 # 8
 # Then, the output should be:
 # {1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64}
-
+#
 # def dictsqure(n):
 #     d = {}
 #     for i in range(1,n+1):
 #         d[i] = i**2
 #     print d
 # dictsqure(8)
-
+#
 # Write a program which accepts a sequence of comma-separated numbers from console and generate a list and a tuple which contains every number.
 # Suppose the following input is supplied to the program:
 # 34,67,55,33,12,98
 # Then, the output should be:
 # ['34', '67', '55', '33', '12', '98']
 # ('34', '67', '55', '33', '12', '98')
-
-
+#
+#
 # def comma_separated():
 #     n = raw_input("type in comma_separated numbers: ")
 #     l = n.split(',')
@@ -44,7 +44,7 @@
 # getString: to get a string from console input
 # printString: to print the string in upper case.
 # Also please include simple test function to test the class methods.
-
+#
 # class atleast(object):
 #     "getString and printString"
 #
@@ -94,7 +94,7 @@
 #     print ql
 #
 # squareroot()
-
+#
 # Write a program which takes 2 digits, X,Y as input and generates a 2-dimensional array. The element value in the i-th row and j-th column of the array should be i*j.
 #
 # Example
@@ -102,7 +102,7 @@
 # 3,5
 # Then, the output of the program should be:
 # [[0, 0, 0, 0, 0], [0, 1, 2, 3, 4], [0, 2, 4, 6, 8]]
-
+#
 # print [[i*j for i in range (5)] for j in range (3)]
 #
 # def two_dimensional_array(y, x):
@@ -116,21 +116,21 @@
 #     print l
 #
 # two_dimensional_array(3, 5)
-
+#
 # Question:
 # Write a program that accepts a comma separated sequence of words as input and prints the words in a comma-separated sequence after sorting them alphabetically.
 # Suppose the following input is supplied to the program:
 # without,hello,bag,world
 # Then, the output should be:
 # bag,hello,without,world
-
+#
 # def sorting():
 #     w = raw_input("word sequence: ")
 #     lw = w.split(",")
 #     lw.sort()
 #     print ",".join(lw)
 # sorting()
-
+#
 # Question 9
 # Level 2
 #
@@ -142,7 +142,7 @@
 # Then, the output should be:
 # HELLO WORLD
 # PRACTICE MAKES PERFECT
-
+#
 # def multiline():
 #     # lines = []
 #     #
@@ -161,7 +161,7 @@
 #     print "\n"
 #     print lines.upper()
 # multiline()
-
+#
 # def upperline():
 #     no_of_lines = 5
 #     lines1 = ""
@@ -180,7 +180,7 @@
 #     text = '\n'.join(lines)
 #     print text.upper()
 # upperline()
-
+#
 # Write a program that accepts a sequence of whitespace separated words as input and prints the words after removing all duplicate words and sorting them alphanumerically.
 # Suppose the following input is supplied to the program:
 # hello world and practice makes perfect and hello world again
@@ -200,7 +200,7 @@
 #     # print " ".join(l1)
 #     print ' '.join(sorted(list(set(l))))
 # rmduplicate()
-
+#
 # Question:
 # Write a program which accepts a sequence of comma separated 4 digit binary numbers as its input and then check whether they are divisible by 5 or not. The numbers that are divisible by 5 are to be printed in a comma separated sequence.
 # Example:
@@ -208,7 +208,7 @@
 # Then the output should be:
 # 1010
 # Notes: Assume the data is input by console.
-
+#
 # def binary():
 #     l = ['0000', '0001', '0010', '0011', '0100', '0101', '0110', '0111', '1000', '1001', '1010', '1011', '1100',
 #         '1101', '1110', '1111']
@@ -237,16 +237,89 @@
 #     print total
 #
 # binary()
+#
+# def binary():
+#     l = [x for x in raw_input().split(",")]
+#     l1 = []
+#
+#     for p in l:
+#
+#         intp = int(p, 2)
+#         if not intp%5:
+#             l1.append(p)
+#
+#     print ",".join(l1)
+# binary()
+#
+#
+# Question:
+# Write a program, which will find all such numbers between 1000 and 3000 (both included) such that each digit of the number is an even number.
+# The numbers obtained should be printed in a comma-separated sequence on a single line.
+#
+# def alleven():
+#     l = range(1000,3001)
+#     l1 = []
+#     for i in l:
+#         i = str(i)
+#         if int(i[0]) % 2 == 0 and int(i[1]) % 2 == 0 and int(i[2]) % 2 == 0 and int(i[3]) % 2 == 0:
+#             l1.append(i)
+#     print ",".join(l1)
+# alleven()
+#
+# Write a program that accepts a sentence and calculate the number of letters and digits.
+# Suppose the following input is supplied to the program:
+# hello world! 123
+# Then, the output should be:
+# LETTERS 10
+# DIGITS 3
+# import string
+# def cal():
+#     l = [x for x in raw_input().split()]
+#     n = ""
+#     w = ""
+#     atoz = string.ascii_lowercase
+#     print atoz
+#     for i in l:
+#         try:
+#             if int(i):
+#                 n += i
+#         except:
+#             for j in i:
+#                 if j in atoz:
+#                     w += j
+#     print ("LETTERS %s \nDIGITS %s" %(len(w),len(n)))
+# cal()
+# def cal():
+#     s = raw_input()
+#     d = {"DIGITS": 0, "LETTERS": 0}
+#     for i in s:
+#         if i.isdigit():
+#             d["DIGITS"] += 1
+#         elif i.isalpha():
+#             d["LETTERS"] += 1
+#         else:
+#             pass
+#     l = d.values()
+#     print ("LETTERS %s \nDIGITS %s" %(l[1],l[0]))
+# cal()
+#
+# Write a program that accepts a sentence and calculate the number of upper case letters and lower case letters.
+# Suppose the following input is supplied to the program:
+# Hello world!
+# Then, the output should be:
+# UPPER CASE 1
+# LOWER CASE 9
 
-def binary():
-    l = [x for x in raw_input().split(",")]
-    l1 = []
-
-    for p in l:
-
-        intp = int(p, 2)
-        if not intp%5:
-            l1.append(p)
-
-    print ",".join(l1)
-binary()
+def upper_lower():
+    s = raw_input()
+    d = {"UPPER": 0, "LOWER": 0}
+    for i in s:
+        if i.isupper():
+            d["UPPER"] += 1
+        elif i.islower():
+            d["LOWER"] += 1
+        else:
+            pass
+    l = d.values()
+    print ("LOWER %s \nUPPER %s" %(l[1],l[0]))
+upper_lower()

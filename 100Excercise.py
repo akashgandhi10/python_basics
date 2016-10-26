@@ -143,21 +143,110 @@
 # HELLO WORLD
 # PRACTICE MAKES PERFECT
 
-def upperline():
-    no_of_lines = 5
-    lines1 = ""
-    for i in xrange(5):
-        lines1+=raw_input()+"\n"
-    print lines1.upper()
+# def multiline():
+#     # lines = []
+#     #
+#     # while True:
+#     #     line = raw_input()
+#     #     if line:
+#     #
+#     #         lines.append(line)
+#     #     else:
+#     #         break
+#     # print '\n'.join(lines).upper()
+#     n = 5
+#     lines = ""
+#     for i in range(n):
+#         lines += raw_input() + "\n"
+#     print "\n"
+#     print lines.upper()
+# multiline()
 
-    lines = []
-    while True:
-        line = raw_input()
-        if line:
-            lines.append(line)
-        else:
-            break
+# def upperline():
+#     no_of_lines = 5
+#     lines1 = ""
+#     for i in xrange(5):
+#         lines1+=raw_input()+"\n"
+#     print lines1.upper()
+#
+#     lines = []
+#     while True:
+#         line = raw_input()
+#         if line:
+#             lines.append(line)
+#         else:
+#             break
+#
+#     text = '\n'.join(lines)
+#     print text.upper()
+# upperline()
 
-    text = '\n'.join(lines)
-    print text.upper()
-upperline()
+# Write a program that accepts a sequence of whitespace separated words as input and prints the words after removing all duplicate words and sorting them alphanumerically.
+# Suppose the following input is supplied to the program:
+# hello world and practice makes perfect and hello world again
+# Then, the output should be:
+# again and hello makes perfect practice world
+#
+# def rmduplicate():
+#     s = raw_input()
+#     l = s.split()
+#     # # print l
+#     # l1 = []
+#     # for i in l:
+#     #     if i not in l1:
+#     #         l1.append(i)
+#     # l1.sort()
+#     # # print l1
+#     # print " ".join(l1)
+#     print ' '.join(sorted(list(set(l))))
+# rmduplicate()
+
+# Question:
+# Write a program which accepts a sequence of comma separated 4 digit binary numbers as its input and then check whether they are divisible by 5 or not. The numbers that are divisible by 5 are to be printed in a comma separated sequence.
+# Example:
+# 0100,0011,1010,1001
+# Then the output should be:
+# 1010
+# Notes: Assume the data is input by console.
+
+# def binary():
+#     l = ['0000', '0001', '0010', '0011', '0100', '0101', '0110', '0111', '1000', '1001', '1010', '1011', '1100',
+#         '1101', '1110', '1111']
+#     l1 = []
+#     while True:
+#         b = raw_input()
+#         if b:
+#             if b in l:
+#                 l1.append(b)
+#         else:
+#             break
+#     total = ""
+#     for i,j in enumerate(l1):
+#         # if i == 0:
+#         t = int(j[0])*8 + int(j[1])*4 + int(j[2])*2 + int(j[3])
+#         # elif i == 1:
+#         #     t = int(j[1])*4
+#         # elif i == 2:
+#         #     t = int(j[2])*2
+#         # else:
+#         #     t = int(j[3])
+#         # total += t
+#         total += str(t) + ', '
+#     total = total[:-2]
+#     print ','.join(l1)
+#     print total
+#
+# binary()
+
+def binary():
+    l = [x for x in raw_input().split(",")]
+    l1 = []
+
+    for p in l:
+
+        intp = int(p, 2)
+        if not intp%5:
+            l1.append(p)
+
+    print ",".join(l1)
+binary()

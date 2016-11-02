@@ -309,17 +309,242 @@
 # Then, the output should be:
 # UPPER CASE 1
 # LOWER CASE 9
+#
+# def upper_lower():
+#     s = raw_input()
+#     d = {"UPPER": 0, "LOWER": 0}
+#     for i in s:
+#         if i.isupper():
+#             d["UPPER"] += 1
+#         elif i.islower():
+#             d["LOWER"] += 1
+#         else:
+#             pass
+#     l = d.values()
+#     print ("LOWER %s \nUPPER %s" %(l[1],l[0]))
+# upper_lower()
 
-def upper_lower():
-    s = raw_input()
-    d = {"UPPER": 0, "LOWER": 0}
-    for i in s:
-        if i.isupper():
-            d["UPPER"] += 1
-        elif i.islower():
-            d["LOWER"] += 1
+# Question
+# Write a program that accepts sequence of lines as input and prints the lines after making all characters in the sentence capitalized.
+# Suppose the following input is supplied to the program:
+# Hello world
+# Practice makes perfect
+# Then, the output should be:
+# HELLO WORLD
+# PRACTICE MAKES PERFECT
+#
+# def upper_():
+#     # l = [x for x in raw_input().upper()]
+#     # print l
+#     l = []
+#     while True:
+#         s = raw_input()
+#         if s:
+#             s = s.upper()
+#             l.append(s)
+#         else:
+#             break
+#     # for i in l:
+#     #     print i
+#     print "\n".join(l)
+# upper_()
+
+
+# Question 15
+# Level 2
+#
+# Question:
+# Write a program that computes the value of a+aa+aaa+aaaa with a given digit as the value of a.
+# Suppose the following input is supplied to the program:
+# 9
+# Then, the output should be:
+# 11106
+
+
+#
+# def equ():
+#     n = raw_input()
+#     return int(n) + int(n+n) + int(n+n+n) + int(n+n+n+n)
+# print equ()
+
+# Question:
+# Use a list comprehension to square each odd number in a list. The list is input by a sequence of comma-separated numbers.
+# Suppose the following input is supplied to the program:
+# 1,2,3,4,5,6,7,8,9
+# Then, the output should be:
+# 1,3,5,7,9
+
+#
+# print ",".join([x for x in raw_input().split(",") if int(x) % 2 != 0])
+
+# Question:
+# Write a program that computes the net amount of a bank account based a transaction log from console input. The transaction log format is shown as following:
+# D 100
+# W 200
+
+# D means deposit while W means withdrawal.
+# Suppose the following input is supplied to the program:
+# D 300
+# D 300
+# W 200
+# D 100
+# Then, the output should be:
+# 500
+
+# def bank():
+#     total = 0
+#     while True:
+#         trans = raw_input()
+#
+#         if not trans:
+#             break
+#         try:
+#             n = int(trans[2:])
+#             if n:
+#                 if trans[1] == " ":
+#                     if trans[0].upper() == "D":
+#                         total += n
+#                     elif trans[0].upper() == "W":
+#                         total -= n
+#                     else:
+#                         pass
+#         except ValueError:
+#             print "please try valid amount for transaction"
+#
+#     print total
+# bank
+# Question:
+# A website requires the users to input username and password to register. Write a program to check the validity of password input by users.
+# Following are the criteria for checking the password:
+# 1. At least 1 letter between [a-z]
+# 2. At least 1 number between [0-9]
+# 1. At least 1 letter between [A-Z]
+# 3. At least 1 character from [$#@]
+# 4. Minimum length of transaction password: 6
+# 5. Maximum length of transaction password: 12
+# Your program should accept a sequence of comma separated passwords and will check them according to the above criteria. Passwords that match the criteria are to be printed, each separated by a comma.
+# Example
+# If the following passwords are given as input to the program:
+# ABd1234@1,a F1#,2w3E*,2We3345
+# Then, the output of the program should be:
+# ABd1234@1
+# import string
+# def one(i):
+#     atoz = string.ascii_lowercase
+#     for x in atoz:
+#         if x in i:
+#             return True
+#
+# def two(i):
+#     for x in range(0,10):
+#         if str(x) in i:
+#             return True
+#
+# def three(i):
+#     ATOZ = string.uppercase
+#     for x in ATOZ:
+#         if x in i:
+#             return True
+#
+# def four(i):
+#     s = "$#@"
+#     for x in s:
+#         if x in i:
+#             return True
+#
+# def valid_pass():
+#     l = [x for x in raw_input().split(",")]
+#     for i in l:
+#         if 6 <= len(i) and len(i) <= 12:
+#             if one(i) and two(i) and two(i) and three(i) and four(i):
+#                 return i
+#
+# print valid_pass()
+
+# Question:
+# You are required to write a program to sort the (name, age, height) tuples by ascending order where name is string, age and height are numbers. The tuples are input by console. The sort criteria is:
+# 1: Sort based on name;
+# 2: Then sort based on age;
+# 3: Then sort by score.
+# The priority is that name > age > score.
+# If the following tuples are given as input to the program:
+# Tom,19,80
+# John,21,90
+# John,20,95
+# John,20,90
+# Jony,17,93
+# Jony,17,91
+# Jony,16,90
+# Json,21,85
+
+# Then, the output of the program should be:
+# [('John', '20', '90'), ('Jony', '17', '91'), ('Jony', '17', '93'), ('Json', '21', '85'), ('Tom', '19', '80')]
+# from operator import itemgetter
+# def sort_tuple():
+#     l = []
+#     while True:
+#         s = raw_input()
+#         if not s:
+#             break
+#         t = tuple(s.split(","))
+#         l.append(t)
+#
+#     print sorted(l, key = lambda x: (x[0],x[1],x[2]))
+#     print sorted(l, key = itemgetter(0,1,2))
+# sort_tuple()
+
+
+
+# Question
+# A robot moves in a plane starting from the original point (0,0). The robot can move toward UP, DOWN, LEFT and RIGHT with a given steps. The trace of robot movement is shown as the following:
+# UP 5
+# DOWN 3
+# LEFT 3
+# RIGHT 2
+#
+# The numbers after the direction are steps. Please write a program to compute the distance from current position after a sequence of movement and original point. If the distance is a float, then just print the nearest integer.
+# Example:
+# If the following tuples are given as input to the program:
+# UP 5
+# DOWN 3
+# LEFT 3
+# RIGHT 2
+# Then, the output of the program should be:
+# 2
+import math
+# def distance():
+#     up = input("UP ")
+#     down = input("DOWN ")
+#     left = input("LEFT ")
+#     right = input("RIGHT ")
+#     x = up - down
+#     y = right - left
+#     dist = int(math.sqrt((x**2) + (y**2)))
+#
+#     print dist
+# distance()
+
+def distance():
+    poss = [0,0]
+    while True:
+        s = raw_input()
+        if not s:
+            break
+        l = s.split(" ")
+        movement = l[0]
+        direction = int(l[1])
+
+        if movement == "UP":
+            poss[0] += direction
+        elif movement == "DOWN":
+            poss[0] -= direction
+        elif movement == "LEFT":
+            poss[1] -= direction
+        elif movement == "RIGHT":
+            poss[1] += direction
         else:
             pass
-    l = d.values()
-    print ("LOWER %s \nUPPER %s" %(l[1],l[0]))
-upper_lower()
+    dist = int(round(math.sqrt((poss[0]**2) + (poss[1]**2))))
+    print dist
+
+distance()

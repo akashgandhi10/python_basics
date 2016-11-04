@@ -12,7 +12,7 @@ print cal_module.cal(10, 2)
 
 from cal_module import cal
 
-print cal_module.cal(10, 2)
+print cal(10, 2)
 
 
 import package_module

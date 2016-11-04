@@ -524,27 +524,60 @@ import math
 #     print dist
 # distance()
 
-def distance():
-    poss = [0,0]
-    while True:
-        s = raw_input()
-        if not s:
-            break
-        l = s.split(" ")
-        movement = l[0]
-        direction = int(l[1])
+# def distance():
+#     poss = [0,0]
+#     while True:
+#         s = raw_input()
+#         if not s:
+#             break
+#         l = s.split(" ")
+#         movement = l[0]
+#         direction = int(l[1])
+#
+#         if movement == "UP":
+#             poss[0] += direction
+#         elif movement == "DOWN":
+#             poss[0] -= direction
+#         elif movement == "LEFT":
+#             poss[1] -= direction
+#         elif movement == "RIGHT":
+#             poss[1] += direction
+#         else:
+#             pass
+#     dist = int(round(math.sqrt((poss[0]**2) + (poss[1]**2))))
+#     print dist
+#
+# distance()
 
-        if movement == "UP":
-            poss[0] += direction
-        elif movement == "DOWN":
-            poss[0] -= direction
-        elif movement == "LEFT":
-            poss[1] -= direction
-        elif movement == "RIGHT":
-            poss[1] += direction
+# Write a program to compute the frequency of the words from the input. The output should output after sorting the key alphanumerically.
+# Suppose the following input is supplied to the program:
+# New to Python or choosing between Python 2 and Python 3? Read Python 2 or Python 3.
+# Then, the output should be:
+# 2:2
+# 3.:1
+# 3?:1
+# New:1
+# Python:5
+# Read:1
+# and:1
+# between:1
+# choosing:1
+# or:2
+# to:1
+
+def frequency():
+    l = [x for x in raw_input().split(" ")]
+    d = {}
+    for i in l:
+        if i not in d:
+            d[i] = 1
         else:
-            pass
-    dist = int(round(math.sqrt((poss[0]**2) + (poss[1]**2))))
-    print dist
+            d[i] += 1
+    # for key, value in d.items() :
+    #     print key + ":",value
+    dsortkey = sorted(d.keys())
+    for i in dsortkey:
+        print "%s: %d" %(i,d[i])
 
-distance()
+
+frequency()

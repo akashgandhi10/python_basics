@@ -565,19 +565,19 @@ import math
 # or:2
 # to:1
 
-def frequency():
-    l = [x for x in raw_input().split(" ")]
-    d = {}
-    for i in l:
-        if i not in d:
-            d[i] = 1
-        else:
-            d[i] += 1
-    # for key, value in d.items() :
-    #     print key + ":",value
-    dsortkey = sorted(d.keys())
-    for i in dsortkey:
-        print "%s: %d" %(i,d[i])
-
-
-frequency()
+# def frequency():
+#     l = [x for x in raw_input().split(" ")]
+#     d = {}
+#     for i in l:
+#         if i not in d:
+#             d[i] = 1
+#         else:
+#             d[i] += 1
+#     # for key, value in d.items() :
+#     #     print key + ":",value
+#     dsortkey = sorted(d.keys())
+#     for i in dsortkey:
+#         print "%s: %d" %(i,d[i])
+#
+#
+# frequency()

@@ -1,9 +1,10 @@
 class Load(object):
     "naiti load"
     __counter = 0
+    c=0
 
     def __init__(self, x=1.0):
-        abs_method()
+        # abs_method()
         self.x = x
 
     def square(self):
@@ -11,11 +12,12 @@ class Load(object):
 
     @staticmethod
     def static_method():
-        __counter += 1
+        c += 1
 
 # del a
 
 Load.static_method()
+Load.c
 a = Load()
 b = Load(2.0)
 

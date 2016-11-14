@@ -14,6 +14,7 @@ def func1():
 
 func1()
 print globals()
+print globals().keys()
 print globals()["s"]
 
 def hello(name = "Akash"):

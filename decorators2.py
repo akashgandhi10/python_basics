@@ -2,7 +2,7 @@ def hello(name = "Akash"):
     print ("the hello() function has been executed")
 
     def greet():
-        return "\t this is inside gree function"
+        return "\t this is inside greet function"
 
     def welcome():
         return "\t this is inside welcome function"
@@ -18,12 +18,18 @@ def hello(name = "Akash"):
 
 
 hello()
-
 x = hello()
-
 print x
-
 print x()
+
+print hello()()
+
+
+x = hello("gandhi")
+print x
+print x()
+
+print hello(name = "sky")()
 
 #NameError greet() scope of the function
 

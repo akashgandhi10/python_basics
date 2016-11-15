@@ -52,6 +52,7 @@ s = "akash"
 
 for iter_s in s:
     print iter_s
+
 # print next(s)
 
 iter_s = iter(s)
@@ -61,4 +62,5 @@ print next(iter_s)
 print next(iter_s)
 print next(iter_s)
 print next(iter_s)
+# print next(s)
 print next(iter_s)

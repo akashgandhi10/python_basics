@@ -21,7 +21,6 @@ hello()
 x = hello()
 print x
 print x()
-
 print hello()()
 
 

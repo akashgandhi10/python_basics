@@ -3,6 +3,8 @@ def gencub(n):
     for i in range(n):
         yield i ** 3
 
+print gencub(11)
+
 for x in gencub(11):
     print x
 
@@ -55,7 +57,7 @@ for iter_s in s:
     print iter_s
 
 # print next(s)
-
+#String is not iterator, it's iterable
 iter_s = iter(s)
 
 print next(iter_s)
@@ -74,7 +76,7 @@ def fib():
         yield a
         a, b = b, a + b
 
-l = list(itertools.islice(fib(), 10))
+l = list(itertools.islice(fib(), 11))
 print l
 
 def doublegen(n):

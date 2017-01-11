@@ -7,6 +7,7 @@ s = "akash gandhi aaaaaa bbb cc d akash gandhi"
 print Counter(s)
 
 word = s.split()
+print s.split()
 print Counter(word)
 
 c = Counter(word)

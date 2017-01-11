@@ -3,7 +3,7 @@ from collections import defaultdict
 d = {}
 # d["one"]
 
-# d = {"a": 1}
+d = {"a": 1}
 # print d["a"]
 #d["b"]
 
